@@ -262,5 +262,61 @@ namespace nhat
             sock.Close();
         }
 
+
+        private void getNO2()
+        {
+            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20008"));
+            sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            sock.Connect(serverFullAddress);
+            byte []sendNO2 = new byte[] { 1, 32, 0, 57, 192 };
+            byte[] revNO2 = new byte[10];
+            int lenght = 0;
+            try
+            {
+                sock.Send(sendNO2);
+                lenght = sock.Receive(revNO2);
+                if (lenght == 6 && revNO2[2] == 1)
+                {
+                    NO2_value.Text = revNO2[3].ToString();
+                }
+                else
+                {
+                    NO2_value.Text = ((double)((revNO2[4] * 16 * 16 + revNO2[3])/10)).ToString();
+                }
+            }
+            catch (Exception) 
+            {
+                MessageBox.Show("出错");
+            }
+        }
+
+
+        private void getNO()
+        {
+            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20007"));
+            sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            sock.Connect(serverFullAddress);
+            byte[] sendNO = new byte[] { 1, 32, 0, 57, 192 };
+            byte[] revNO = new byte[10];
+            int lenght = 0;
+            try
+            {
+                sock.Send(sendNO);
+                lenght = sock.Receive(revNO);
+                if (lenght == 6 && revNO[2] == 1)
+                {
+                    NO_value.Text = revNO[3].ToString();
+                }
+                else
+                {
+                    NO_value.Text = ((double)((revNO[4] * 16 * 16 + revNO[3]) / 10)).ToString();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("出错");
+            }
+        }
+
     }
 }
