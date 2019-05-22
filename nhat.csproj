@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6ABED59A-6945-4AAE-8BA8-3973D1714B63}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>nhat</RootNamespace>
+    <AssemblyName>nhat</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Air.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Air.Designer.cs">
+      <DependentUpon>Air.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calibra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calibra.Designer.cs">
+      <DependentUpon>Calibra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diag.Designer.cs">
+      <DependentUpon>Diag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exhaust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exhaust.Designer.cs">
+      <DependentUpon>Exhaust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measure\HCCOCO2Standard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measure\HCCOCO2Standard.Designer.cs">
+      <DependentUpon>HCCOCO2Standard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measure\HCCOCO2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measure\HCCOCO2.Designer.cs">
+      <DependentUpon>HCCOCO2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="master.Designer.cs">
+      <DependentUpon>master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measures.Designer.cs">
+      <DependentUpon>Measures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newCar.Designer.cs">
+      <DependentUpon>newCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measure\NO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measure\NO.Designer.cs">
+      <DependentUpon>NO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measure\NO2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measure\NO2.Designer.cs">
+      <DependentUpon>NO2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measure\NO2Standard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measure\NO2Standard.Designer.cs">
+      <DependentUpon>NO2Standard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measure\NOStandard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measure\NOStandard.Designer.cs">
+      <DependentUpon>NOStandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opaque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opaque.Designer.cs">
+      <DependentUpon>Opaque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpaqueCali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpaqueCali.Designer.cs">
+      <DependentUpon>OpaqueCali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpaqueSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpaqueSet.Designer.cs">
+      <DependentUpon>OpaqueSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpaqueVer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpaqueVer.Designer.cs">
+      <DependentUpon>OpaqueVer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpaqueWarn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpaqueWarn.Designer.cs">
+      <DependentUpon>OpaqueWarn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpticsID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpticsID.Designer.cs">
+      <DependentUpon>OpticsID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pump.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pump.Designer.cs">
+      <DependentUpon>Pump.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp.Designer.cs">
+      <DependentUpon>Temp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="useCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="useCar.Designer.cs">
+      <DependentUpon>useCar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Calibra.resx">
+      <DependentUpon>Calibra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diag.resx">
+      <DependentUpon>Diag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exhaust.resx">
+      <DependentUpon>Exhaust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measure\HCCOCO2.resx">
+      <DependentUpon>HCCOCO2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measure\HCCOCO2Standard.resx">
+      <DependentUpon>HCCOCO2Standard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="master.resx">
+      <DependentUpon>master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measures.resx">
+      <DependentUpon>Measures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measure\NO.resx">
+      <DependentUpon>NO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measure\NO2.resx">
+      <DependentUpon>NO2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measure\NO2Standard.resx">
+      <DependentUpon>NO2Standard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measure\NOStandard.resx">
+      <DependentUpon>NOStandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opaque.resx">
+      <DependentUpon>Opaque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpaqueCali.resx">
+      <DependentUpon>OpaqueCali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpaqueSet.resx">
+      <DependentUpon>OpaqueSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpaqueVer.resx">
+      <DependentUpon>OpaqueVer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpaqueWarn.resx">
+      <DependentUpon>OpaqueWarn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpticsID.resx">
+      <DependentUpon>OpticsID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Pump.resx">
+      <DependentUpon>Pump.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp.resx">
+      <DependentUpon>Temp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="useCar.resx">
+      <DependentUpon>useCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Calibrate\" />
+    <Folder Include="Diagnose\" />
+    <Folder Include="Setting\" />
+    <Folder Include="Zeroing\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
