@@ -48,7 +48,6 @@
             this.index.TabIndex = 0;
             this.index.Text = "主界面";
             this.index.UseVisualStyleBackColor = true;
-            this.index.Click += new System.EventHandler(this.Index_Click);
             // 
             // measure
             // 

@@ -17,9 +17,5 @@ namespace nhat
             InitializeComponent();
         }
 
-        private void Index_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
