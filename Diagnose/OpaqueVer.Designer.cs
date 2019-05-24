@@ -36,7 +36,7 @@
             this.setting = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.opaqueID = new System.Windows.Forms.Label();
-            this.opaqueVer = new System.Windows.Forms.Label();
+            this.opaqueLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // index
@@ -141,13 +141,13 @@
             // 
             // opaqueVer
             // 
-            this.opaqueVer.AutoSize = true;
-            this.opaqueVer.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.opaqueVer.Location = new System.Drawing.Point(63, 163);
-            this.opaqueVer.Name = "opaqueVer";
-            this.opaqueVer.Size = new System.Drawing.Size(207, 33);
-            this.opaqueVer.TabIndex = 22;
-            this.opaqueVer.Text = "不透光软件版本";
+            this.opaqueLabel.AutoSize = true;
+            this.opaqueLabel.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.opaqueLabel.Location = new System.Drawing.Point(63, 163);
+            this.opaqueLabel.Name = "opaqueLabel";
+            this.opaqueLabel.Size = new System.Drawing.Size(207, 33);
+            this.opaqueLabel.TabIndex = 22;
+            this.opaqueLabel.Text = "不透光软件版本";
             // 
             // OpaqueVer
             // 
@@ -155,7 +155,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.opaqueVer);
+            this.Controls.Add(this.opaqueLabel);
             this.Controls.Add(this.opaqueID);
             this.Controls.Add(this.setting);
             this.Controls.Add(this.diagnosis);
@@ -181,6 +181,6 @@
         private System.Windows.Forms.Button setting; //设置
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label opaqueID;
-        private System.Windows.Forms.Label opaqueVer;
+        private System.Windows.Forms.Label opaqueLabel;
     }
 }
