@@ -74,7 +74,7 @@ namespace nhat
         public Menu()
         {
             InitializeComponent();
-            Control.CheckForIllegalCrossThreadCalls = false; //工作线程不能访问窗口线程
+            //Control.CheckForIllegalCrossThreadCalls = false; //工作线程不能访问窗口线程
 
         }
 
@@ -86,15 +86,6 @@ namespace nhat
             //port.Open();
             //Send(new byte[] { 1, 32, 0, 57, 192 });
             //port.DataReceived += new SerialDataReceivedEventHandler(Receive);
-
-        }
-
-
-
-        //断开ip连接
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            sock.Close();
 
         }
 
@@ -113,13 +104,12 @@ namespace nhat
             GC.Collect();
             if (data[2] == 0)
             {
-                //label1.Text = ((data[4] * 100 + data[5]) / 10).ToString();
+                //label1.Text = ((data[4] * 16 *16 + data[3]) / 10).ToString();
             }
             else
             {
                 //label1.Text = null;
             }
-
         }
 
 
@@ -223,17 +213,16 @@ namespace nhat
             serverFullAddress = new IPEndPoint(serverIP, int.Parse("20002"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             sock.Connect(serverFullAddress);
-            byte[] sendbyte = new byte[] { 84, 1, 32, 139 };
+            byte[] sendbyte = new byte[] { 84, 1, 32, 139 }; //5401208B（命令 T
             byte[] revbyte = new byte[1024];
             int lenght = 0;
             try
             {
                 sock.Send(sendbyte);
                 lenght = sock.Receive(revbyte);
-                //label1.Text = lenght.ToString();
                 CO_value.Text = ((char)revbyte[3]).ToString() + ((char)revbyte[4]).ToString() + ((char)revbyte[5]).ToString() + ((char)revbyte[6]).ToString() + ((char)revbyte[7]).ToString();
                 CO2_value.Text = ((char)revbyte[8]).ToString() + ((char)revbyte[9]).ToString() + ((char)revbyte[10]).ToString() + ((char)revbyte[11]).ToString() + ((char)revbyte[12]).ToString();
-                if (revbyte[38] == 45)
+                if (revbyte[38] == 45) //45 == 2D == -
                 {
                     Oiltemp_value.Text = ((char)revbyte[39]).ToString() + ((char)revbyte[40]).ToString() + ((char)revbyte[41]).ToString() + ((char)revbyte[42]).ToString();
                 }
@@ -250,16 +239,15 @@ namespace nhat
             serverFullAddress = new IPEndPoint(serverIP, int.Parse("20002"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             sock.Connect(serverFullAddress);
-            byte[] sendbyte1 = new byte[] { 84, 1, 21, 150 };
+            byte[] sendbyte1 = new byte[] { 84, 1, 21, 150 }; //54011596
             byte[] revbyte = new byte[1024];
             int lenght = 0;
             try
             {
-
                 sock.Send(sendbyte1);
                 lenght = sock.Receive(revbyte);
 
-                Air_value.Text = ((char)revbyte[8]).ToString() + ((char)revbyte[9]).ToString() + ((char)revbyte[10]).ToString() + ((char)revbyte[11]).ToString();
+                Air_value.Text = ((char)revbyte[8]).ToString() + ((char)revbyte[9]).ToString() + ((char)revbyte[10]).ToString() + ((char)revbyte[11]).ToString(); //气压值（mPa
                 PEF_value.Text = ((char)revbyte[23]).ToString() + ((char)revbyte[24]).ToString() + ((char)revbyte[25]).ToString() + ((char)revbyte[26]).ToString() + ((char)revbyte[27]).ToString();
 
 
@@ -276,17 +264,15 @@ namespace nhat
             serverFullAddress = new IPEndPoint(serverIP, int.Parse("20002"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             sock.Connect(serverFullAddress);
-            byte[] sendbyte1 = new byte[] { 80, 5, 48, 123 };
+            byte[] sendbyte1 = new byte[] { 80, 5, 48, 123 }; //5005307B（命令 P
             byte[] revbyte = new byte[1024];
             int lenght = 0;
             try
             {
-
                 sock.Send(sendbyte1);
                 lenght = sock.Receive(revbyte);
 
                 HC_value.Text = ((char)revbyte[2]).ToString() + ((char)revbyte[3]).ToString() + ((char)revbyte[4]).ToString() + ((char)revbyte[5]).ToString() + ((char)revbyte[6]).ToString();
-
 
             }
             catch (Exception)
@@ -302,7 +288,7 @@ namespace nhat
             serverFullAddress = new IPEndPoint(serverIP, int.Parse("20008"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             sock.Connect(serverFullAddress);
-            byte[] sendNO2 = new byte[] { 1, 32, 0, 57, 192 };
+            byte[] sendNO2 = new byte[] { 1, 32, 0, 57, 192 }; //01200039C0
             byte[] revNO2 = new byte[10];
             int lenght = 0;
             try
@@ -330,7 +316,7 @@ namespace nhat
             serverFullAddress = new IPEndPoint(serverIP, int.Parse("20007"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             sock.Connect(serverFullAddress);
-            byte[] sendNO = new byte[] { 1, 32, 0, 57, 192 };
+            byte[] sendNO = new byte[] { 1, 32, 0, 57, 192 }; //01200039C0
             byte[] revNO = new byte[10];
             int lenght = 0;
             try
