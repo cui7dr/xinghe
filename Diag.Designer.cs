@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Diag));
             this.label1 = new System.Windows.Forms.Label();
             this.index = new System.Windows.Forms.Button();
             this.measure = new System.Windows.Forms.Button();
@@ -235,8 +236,9 @@
             this.Controls.Add(this.zero);
             this.Controls.Add(this.measure);
             this.Controls.Add(this.index);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Diag";
-            this.Text = "Diagonsis";
+            this.Text = "诊断菜单";
             this.ResumeLayout(false);
             this.PerformLayout();
 

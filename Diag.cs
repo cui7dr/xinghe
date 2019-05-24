@@ -13,9 +13,6 @@ namespace nhat
     public partial class Diag : Form
     {
 
-        
-
-
         public Diag()
         {
             InitializeComponent();
@@ -85,7 +82,6 @@ namespace nhat
             this.Hide();
             measures.ShowDialog();
         }
-
 
         //调零按钮
         private void Zero_Click(object sender, EventArgs e)
