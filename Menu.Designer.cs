@@ -450,10 +450,10 @@
         private System.Windows.Forms.Button setting; //设置
         private System.Windows.Forms.Label NO;
         private System.Windows.Forms.Label NO2;
-        private System.Windows.Forms.Label N;
+        private System.Windows.Forms.Label N; //不透光度
         private System.Windows.Forms.Label NOx;
         private System.Windows.Forms.Label CO2;
-        private System.Windows.Forms.Label K;
+        private System.Windows.Forms.Label K; //光吸收系数
         private System.Windows.Forms.Label Oiltemp; //油温
         private System.Windows.Forms.Label Airpressure; //气压
         private System.Windows.Forms.Label PEF; //PEF
