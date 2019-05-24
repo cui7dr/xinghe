@@ -84,10 +84,10 @@
     <Compile Include="Diag.Designer.cs">
       <DependentUpon>Diag.cs</DependentUpon>
     </Compile>
-    <Compile Include="Exhaust.cs">
+    <Compile Include="Setting\Exhaust.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exhaust.Designer.cs">
+    <Compile Include="Setting\Exhaust.Designer.cs">
       <DependentUpon>Exhaust.cs</DependentUpon>
     </Compile>
     <Compile Include="Calibrate\HCCOCO2Standard.cs">
@@ -114,10 +114,10 @@
     <Compile Include="Measures.Designer.cs">
       <DependentUpon>Measures.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calibrate\Menu.cs">
+    <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calibrate\Menu.Designer.cs">
+    <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Measure\newCar.cs">
@@ -218,7 +218,7 @@
     <EmbeddedResource Include="Diag.resx">
       <DependentUpon>Diag.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exhaust.resx">
+    <EmbeddedResource Include="Setting\Exhaust.resx">
       <DependentUpon>Exhaust.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calibrate\HCCOCO2.resx">
@@ -233,7 +233,7 @@
     <EmbeddedResource Include="Measures.resx">
       <DependentUpon>Measures.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calibrate\Menu.resx">
+    <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calibrate\NO.resx">
