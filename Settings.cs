@@ -62,7 +62,6 @@ namespace nhat
         }
         #endregion
 
-
         #region
         /// <summary>
         /// 按钮功能
@@ -85,7 +84,6 @@ namespace nhat
             this.Hide();
             measures.ShowDialog();
         }
-
 
         //调零按钮
         private void Zero_Click(object sender, EventArgs e)
