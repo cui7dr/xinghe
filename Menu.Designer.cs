@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.index = new System.Windows.Forms.Button();
             this.measure = new System.Windows.Forms.Button();
             this.zero = new System.Windows.Forms.Button();
@@ -432,8 +433,9 @@
             this.Controls.Add(this.zero);
             this.Controls.Add(this.measure);
             this.Controls.Add(this.index);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
-            this.Text = "Menu";
+            this.Text = "主菜单";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

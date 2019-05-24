@@ -303,5 +303,8 @@
   <ItemGroup>
     <Folder Include="Zeroing\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\Image\logo.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
