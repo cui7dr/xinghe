@@ -37,6 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.NO = new System.Windows.Forms.Label();
             this.H2O = new System.Windows.Forms.Label();
+            this.NO_value = new System.Windows.Forms.Label();
+            this.H2O_value = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // index
@@ -122,10 +124,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(504, 20);
+            this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(500, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 33);
+            this.label1.Size = new System.Drawing.Size(279, 33);
             this.label1.TabIndex = 6;
             this.label1.Text = "露点温度检查菜单";
             // 
@@ -149,11 +151,33 @@
             this.H2O.TabIndex = 10;
             this.H2O.Text = "H2O";
             // 
+            // NO_value
+            // 
+            this.NO_value.AutoSize = true;
+            this.NO_value.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.NO_value.Location = new System.Drawing.Point(226, 132);
+            this.NO_value.Name = "NO_value";
+            this.NO_value.Size = new System.Drawing.Size(284, 64);
+            this.NO_value.TabIndex = 19;
+            this.NO_value.Text = "NO_value";
+            // 
+            // H2O_value
+            // 
+            this.H2O_value.AutoSize = true;
+            this.H2O_value.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.H2O_value.Location = new System.Drawing.Point(909, 132);
+            this.H2O_value.Name = "H2O_value";
+            this.H2O_value.Size = new System.Drawing.Size(316, 64);
+            this.H2O_value.TabIndex = 20;
+            this.H2O_value.Text = "H2O_value";
+            // 
             // Temp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.H2O_value);
+            this.Controls.Add(this.NO_value);
             this.Controls.Add(this.H2O);
             this.Controls.Add(this.NO);
             this.Controls.Add(this.label1);
@@ -181,5 +205,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label NO;
         private System.Windows.Forms.Label H2O;
+        private System.Windows.Forms.Label NO_value;
+        private System.Windows.Forms.Label H2O_value;
     }
 }

@@ -66,10 +66,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Air.cs">
+    <Compile Include="Diagnose\Air.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Air.Designer.cs">
+    <Compile Include="Diagnose\Air.Designer.cs">
       <DependentUpon>Air.cs</DependentUpon>
     </Compile>
     <Compile Include="Calibra.cs">
@@ -180,18 +180,18 @@
     <Compile Include="OpaqueWarn.Designer.cs">
       <DependentUpon>OpaqueWarn.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpticsID.cs">
+    <Compile Include="Diagnose\OpticsID.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OpticsID.Designer.cs">
+    <Compile Include="Diagnose\OpticsID.Designer.cs">
       <DependentUpon>OpticsID.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pump.cs">
+    <Compile Include="Diagnose\Pump.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pump.Designer.cs">
+    <Compile Include="Diagnose\Pump.Designer.cs">
       <DependentUpon>Pump.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs">
@@ -200,10 +200,10 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Temp.cs">
+    <Compile Include="Diagnose\Temp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Temp.Designer.cs">
+    <Compile Include="Diagnose\Temp.Designer.cs">
       <DependentUpon>Temp.cs</DependentUpon>
     </Compile>
     <Compile Include="useCar.cs">
@@ -263,7 +263,7 @@
     <EmbeddedResource Include="OpaqueWarn.resx">
       <DependentUpon>OpaqueWarn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpticsID.resx">
+    <EmbeddedResource Include="Diagnose\OpticsID.resx">
       <DependentUpon>OpticsID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -275,13 +275,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Pump.resx">
+    <EmbeddedResource Include="Diagnose\Pump.resx">
       <DependentUpon>Pump.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Temp.resx">
+    <EmbeddedResource Include="Diagnose\Temp.resx">
       <DependentUpon>Temp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="useCar.resx">
@@ -302,7 +302,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Calibrate\" />
-    <Folder Include="Diagnose\" />
     <Folder Include="Setting\" />
     <Folder Include="Zeroing\" />
   </ItemGroup>

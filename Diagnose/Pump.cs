@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace nhat
 {
-    public partial class Exhaust : Form
+    public partial class Pump : Form
     {
-        public Exhaust()
+        public Pump()
         {
             InitializeComponent();
         }
 
-        private void Exhaust_Load(object sender, EventArgs e)
+        private void Pump_Load(object sender, EventArgs e)
         {
 
         }
-
 
 
         #region
@@ -121,7 +120,6 @@ namespace nhat
             settings.ShowDialog();
         }
         #endregion
-
 
     }
 }

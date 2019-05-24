@@ -10,18 +10,12 @@ using System.Windows.Forms;
 
 namespace nhat
 {
-    public partial class Exhaust : Form
+    public partial class OpticsID : Form
     {
-        public Exhaust()
+        public OpticsID()
         {
             InitializeComponent();
         }
-
-        private void Exhaust_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         #region
@@ -121,7 +115,6 @@ namespace nhat
             settings.ShowDialog();
         }
         #endregion
-
 
     }
 }
