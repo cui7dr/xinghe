@@ -344,7 +344,6 @@ namespace nhat
                 else
                 {
                     NO_value.Text = ((double)((revNO[4] * 16 * 16 + revNO[3]) / 10)).ToString();
-                    //No
                 }
             }
             catch (Exception)
