@@ -13,6 +13,15 @@ namespace nhat
     public partial class Diag : Form
     {
 
+        
+
+
+        public Diag()
+        {
+            InitializeComponent();
+        }
+
+
         #region
         /// <summary>
         /// 窗体控件自适应
@@ -52,13 +61,6 @@ namespace nhat
             base.OnResize(e);
         }
         #endregion
-
-
-
-        public Diag()
-        {
-            InitializeComponent();
-        }
 
 
         #region
