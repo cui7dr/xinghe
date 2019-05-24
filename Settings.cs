@@ -17,10 +17,6 @@ namespace nhat
             InitializeComponent();
         }
 
-        private void Setting_Load(object sender, EventArgs e)
-        {
-
-        }
 
         #region
         /// <summary>
