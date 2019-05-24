@@ -126,10 +126,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(472, 20);
+            this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(465, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 33);
+            this.label1.Size = new System.Drawing.Size(349, 33);
             this.label1.TabIndex = 6;
             this.label1.Text = "HO，CO，CO2 校准菜单";
             // 
@@ -173,7 +173,7 @@
             this.three.Text = "HOCOCO2 三号气校准";
             this.three.UseVisualStyleBackColor = true;
             // 
-            // HOCOCO2
+            // HCCOCO2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +189,7 @@
             this.Controls.Add(this.zero);
             this.Controls.Add(this.measure);
             this.Controls.Add(this.index);
-            this.Name = "HOCOCO2";
+            this.Name = "HCCOCO2";
             this.Text = "HOCOCO2";
             this.ResumeLayout(false);
             this.PerformLayout();
