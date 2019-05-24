@@ -13,6 +13,43 @@ namespace nhat
     public partial class Calibra : Form
     {
 
+        
+
+
+        public Calibra()
+        {
+            InitializeComponent();
+        }
+
+        private void Calibration_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        // 跳转 HC,CO,CO2 校准界面
+        private void HOCOCO2_Click(object sender, EventArgs e)
+        {
+            HCCOCO2 hcc2 = new HCCOCO2();
+            hcc2.Owner = this;
+            this.Hide();
+            hcc2.ShowDialog();
+        }
+
+        // 跳转 NO 校准界面
+        private void NO_Click(object sender, EventArgs e)
+        {
+            NO no = new NO();
+            no.Owner = this;
+            this.Hide();
+            no.ShowDialog();
+        }
+
+
+        #region
+        /// <summary>
+        /// 窗体控件自适应
+        /// </summary>
+
         private Size m_szInit;//初始窗体大小
         private Dictionary<Control, Rectangle> m_dicSize = new Dictionary<Control, Rectangle>();
 
@@ -46,41 +83,14 @@ namespace nhat
             }
             base.OnResize(e);
         }
+        #endregion        
 
 
-        public Calibra()
-        {
-            InitializeComponent();
-        }
-
-        private void Calibration_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        // 跳转 HC,CO,CO2 校准界面
-        private void HOCOCO2_Click(object sender, EventArgs e)
-        {
-            HCCOCO2 hcc2 = new HCCOCO2();
-            hcc2.Owner = this;
-            this.Hide();
-            hcc2.ShowDialog();
-        }
-
-        // 跳转 NO 校准界面
-        private void NO_Click(object sender, EventArgs e)
-        {
-            NO no = new NO();
-            no.Owner = this;
-            this.Hide();
-            no.ShowDialog();
-        }
-
+        #region
         /// <summary>
         /// 按钮功能
         /// </summary>
-        #region
-
+        
         //主菜单按钮
         private void Index_Click(object sender, EventArgs e)
         {
