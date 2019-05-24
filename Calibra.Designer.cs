@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calibra));
             this.label1 = new System.Windows.Forms.Label();
             this.index = new System.Windows.Forms.Button();
             this.measure = new System.Windows.Forms.Button();
@@ -255,8 +256,9 @@
             this.Controls.Add(this.zero);
             this.Controls.Add(this.measure);
             this.Controls.Add(this.index);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Calibra";
-            this.Text = "Calibration";
+            this.Text = "校准菜单";
             this.Load += new System.EventHandler(this.Calibration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
