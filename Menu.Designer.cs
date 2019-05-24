@@ -57,6 +57,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Air_value = new System.Windows.Forms.Label();
             this.PEF_value = new System.Windows.Forms.Label();
+            this.CO = new System.Windows.Forms.Label();
+            this.HC = new System.Windows.Forms.Label();
+            this.CO_value = new System.Windows.Forms.Label();
+            this.HC_value = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // index
@@ -207,7 +211,7 @@
             // 
             this.Oiltemp.AutoSize = true;
             this.Oiltemp.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Oiltemp.Location = new System.Drawing.Point(27, 447);
+            this.Oiltemp.Location = new System.Drawing.Point(27, 554);
             this.Oiltemp.Name = "Oiltemp";
             this.Oiltemp.Size = new System.Drawing.Size(111, 33);
             this.Oiltemp.TabIndex = 12;
@@ -217,7 +221,7 @@
             // 
             this.Airpressure.AutoSize = true;
             this.Airpressure.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Airpressure.Location = new System.Drawing.Point(433, 447);
+            this.Airpressure.Location = new System.Drawing.Point(427, 554);
             this.Airpressure.Name = "Airpressure";
             this.Airpressure.Size = new System.Drawing.Size(111, 33);
             this.Airpressure.TabIndex = 13;
@@ -227,7 +231,7 @@
             // 
             this.PEF.AutoSize = true;
             this.PEF.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PEF.Location = new System.Drawing.Point(853, 447);
+            this.PEF.Location = new System.Drawing.Point(853, 554);
             this.PEF.Name = "PEF";
             this.PEF.Size = new System.Drawing.Size(95, 33);
             this.PEF.TabIndex = 14;
@@ -237,7 +241,7 @@
             // 
             this.temperature.AutoSize = true;
             this.temperature.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.temperature.Location = new System.Drawing.Point(27, 502);
+            this.temperature.Location = new System.Drawing.Point(27, 593);
             this.temperature.Name = "temperature";
             this.temperature.Size = new System.Drawing.Size(111, 33);
             this.temperature.TabIndex = 15;
@@ -247,7 +251,7 @@
             // 
             this.humidity.AutoSize = true;
             this.humidity.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.humidity.Location = new System.Drawing.Point(433, 502);
+            this.humidity.Location = new System.Drawing.Point(427, 593);
             this.humidity.Name = "humidity";
             this.humidity.Size = new System.Drawing.Size(111, 33);
             this.humidity.TabIndex = 16;
@@ -257,7 +261,7 @@
             // 
             this.lambda.AutoSize = true;
             this.lambda.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lambda.Location = new System.Drawing.Point(853, 502);
+            this.lambda.Location = new System.Drawing.Point(853, 593);
             this.lambda.Name = "lambda";
             this.lambda.Size = new System.Drawing.Size(79, 33);
             this.lambda.TabIndex = 17;
@@ -317,7 +321,7 @@
             // 
             this.Oiltemp_value.AutoSize = true;
             this.Oiltemp_value.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Oiltemp_value.Location = new System.Drawing.Point(144, 454);
+            this.Oiltemp_value.Location = new System.Drawing.Point(144, 561);
             this.Oiltemp_value.Name = "Oiltemp_value";
             this.Oiltemp_value.Size = new System.Drawing.Size(166, 24);
             this.Oiltemp_value.TabIndex = 24;
@@ -326,7 +330,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 599);
+            this.label1.Location = new System.Drawing.Point(146, 611);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 25;
@@ -336,7 +340,7 @@
             // 
             this.Air_value.AutoSize = true;
             this.Air_value.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Air_value.Location = new System.Drawing.Point(550, 454);
+            this.Air_value.Location = new System.Drawing.Point(544, 561);
             this.Air_value.Name = "Air_value";
             this.Air_value.Size = new System.Drawing.Size(118, 24);
             this.Air_value.TabIndex = 26;
@@ -346,17 +350,61 @@
             // 
             this.PEF_value.AutoSize = true;
             this.PEF_value.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PEF_value.Location = new System.Drawing.Point(954, 454);
+            this.PEF_value.Location = new System.Drawing.Point(954, 561);
             this.PEF_value.Name = "PEF_value";
-            this.PEF_value.Size = new System.Drawing.Size(82, 24);
+            this.PEF_value.Size = new System.Drawing.Size(118, 24);
             this.PEF_value.TabIndex = 27;
             this.PEF_value.Text = "PEF_value";
+            // 
+            // CO
+            // 
+            this.CO.AutoSize = true;
+            this.CO.Font = new System.Drawing.Font("微软雅黑", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CO.Location = new System.Drawing.Point(12, 414);
+            this.CO.Name = "CO";
+            this.CO.Size = new System.Drawing.Size(194, 124);
+            this.CO.TabIndex = 28;
+            this.CO.Text = "CO";
+            // 
+            // HC
+            // 
+            this.HC.AutoSize = true;
+            this.HC.Font = new System.Drawing.Font("微软雅黑", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.HC.Location = new System.Drawing.Point(643, 414);
+            this.HC.Name = "HC";
+            this.HC.Size = new System.Drawing.Size(190, 124);
+            this.HC.TabIndex = 29;
+            this.HC.Text = "HC";
+            // 
+            // CO_value
+            // 
+            this.CO_value.AutoSize = true;
+            this.CO_value.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CO_value.Location = new System.Drawing.Point(212, 455);
+            this.CO_value.Name = "CO_value";
+            this.CO_value.Size = new System.Drawing.Size(284, 64);
+            this.CO_value.TabIndex = 30;
+            this.CO_value.Text = "CO_value";
+            // 
+            // HC_value
+            // 
+            this.HC_value.AutoSize = true;
+            this.HC_value.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.HC_value.Location = new System.Drawing.Point(839, 455);
+            this.HC_value.Name = "HC_value";
+            this.HC_value.Size = new System.Drawing.Size(284, 64);
+            this.HC_value.TabIndex = 31;
+            this.HC_value.Text = "HC_value";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.HC_value);
+            this.Controls.Add(this.CO_value);
+            this.Controls.Add(this.HC);
+            this.Controls.Add(this.CO);
             this.Controls.Add(this.PEF_value);
             this.Controls.Add(this.Air_value);
             this.Controls.Add(this.label1);
@@ -420,8 +468,12 @@
         private System.Windows.Forms.Label CO2_value;
         private System.Windows.Forms.Label Oiltemp_value;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label Air_value;
+        private System.Windows.Forms.Label Air_value; //气压值
         private System.Windows.Forms.Label PEF_value;
+        private System.Windows.Forms.Label CO;
+        private System.Windows.Forms.Label HC;
+        private System.Windows.Forms.Label CO_value;
+        private System.Windows.Forms.Label HC_value;
     }
 }
 

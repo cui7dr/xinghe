@@ -58,6 +58,7 @@ namespace nhat
 
         }
 
+        // 跳转 HC,CO,CO2 校准界面
         private void HOCOCO2_Click(object sender, EventArgs e)
         {
             HCCOCO2 hcc2 = new HCCOCO2();
@@ -66,6 +67,7 @@ namespace nhat
             hcc2.ShowDialog();
         }
 
+        // 跳转 NO 校准界面
         private void NO_Click(object sender, EventArgs e)
         {
             NO no = new NO();
@@ -74,6 +76,12 @@ namespace nhat
             no.ShowDialog();
         }
 
+        /// <summary>
+        /// 按钮功能
+        /// </summary>
+        #region
+
+        //主菜单按钮
         private void Index_Click(object sender, EventArgs e)
         {
             Menu menu = new Menu();
@@ -81,5 +89,50 @@ namespace nhat
             this.Hide();
             menu.ShowDialog();
         }
+
+        //测量按钮
+        private void Measure_Click(object sender, EventArgs e)
+        {
+            Measures measures = new Measures();
+            measures.Owner = this;
+            this.Hide();
+            measures.ShowDialog();
+        }
+
+
+        //调零按钮
+        private void Zero_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // 校准按钮
+        private void Calibration_Click(object sender, EventArgs e)
+        {
+            Calibra calibration = new Calibra();
+            calibration.Owner = this;
+            this.Hide();
+            calibration.ShowDialog();
+        }
+
+        //诊断菜单
+        private void Diagnosis_Click(object sender, EventArgs e)
+        {
+            Diag diag = new Diag();
+            diag.Owner = this;
+            this.Hide();
+            diag.ShowDialog();
+        }
+
+        //设置菜单
+        private void Setting_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Owner = this;
+            this.Hide();
+            settings.ShowDialog();
+        }
+        #endregion
+
     }
 }

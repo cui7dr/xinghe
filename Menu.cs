@@ -12,11 +12,18 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Net;
 
+/// <summary>
+/// 20001 - 20004 为 RS232 串口
+/// 20005  -20008 为 RS485 串口
+/// 20007、20008 加偶校验位
+/// </summary>
+
+
 namespace nhat
 {
     public partial class Menu : Form
     {
-        
+
         private Size m_szInit;//初始窗体大小
         private Dictionary<Control, Rectangle> m_dicSize = new Dictionary<Control, Rectangle>();
 
@@ -68,7 +75,7 @@ namespace nhat
         {
             InitializeComponent();
             Control.CheckForIllegalCrossThreadCalls = false; //工作线程不能访问窗口线程
-            
+
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -79,9 +86,9 @@ namespace nhat
             //port.Open();
             //Send(new byte[] { 1, 32, 0, 57, 192 });
             //port.DataReceived += new SerialDataReceivedEventHandler(Receive);
-            
+
         }
-        
+
 
 
         //断开ip连接
@@ -116,10 +123,10 @@ namespace nhat
         }
 
 
-
         /// <summary>
         /// 按钮功能
         /// </summary>
+        #region
         // 校准按钮
         private void Calibration_Click(object sender, EventArgs e)
         {
@@ -170,6 +177,8 @@ namespace nhat
             this.Hide();
             settings.ShowDialog();
         }
+        #endregion
+
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -201,14 +210,15 @@ namespace nhat
             sock.Close();
         }
 
+
         private void Button2_Click(object sender, EventArgs e)
         {
-            getCO2();
-            getPa();
+            getCOandCO2andOiltemp();
+            getAirAndPEF();
         }
 
 
-        public void getCO2()
+        public void getCOandCO2andOiltemp()
         {
             serverFullAddress = new IPEndPoint(serverIP, int.Parse("20002"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -221,9 +231,11 @@ namespace nhat
                 sock.Send(sendbyte);
                 lenght = sock.Receive(revbyte);
                 //label1.Text = lenght.ToString();
+                CO_value.Text = ((char)revbyte[3]).ToString() + ((char)revbyte[4]).ToString() + ((char)revbyte[5]).ToString() + ((char)revbyte[6]).ToString() + ((char)revbyte[7]).ToString();
                 CO2_value.Text = ((char)revbyte[8]).ToString() + ((char)revbyte[9]).ToString() + ((char)revbyte[10]).ToString() + ((char)revbyte[11]).ToString() + ((char)revbyte[12]).ToString();
-                if (revbyte[38] == 45){
-                    Oiltemp_value.Text =  ((char)revbyte[39]).ToString() + ((char)revbyte[40]).ToString() + ((char)revbyte[41]).ToString() + ((char)revbyte[42]).ToString();
+                if (revbyte[38] == 45)
+                {
+                    Oiltemp_value.Text = ((char)revbyte[39]).ToString() + ((char)revbyte[40]).ToString() + ((char)revbyte[41]).ToString() + ((char)revbyte[42]).ToString();
                 }
             }
             catch (Exception)
@@ -233,7 +245,7 @@ namespace nhat
             sock.Close();
         }
 
-        public void getPa()
+        public void getAirAndPEF()
         {
             serverFullAddress = new IPEndPoint(serverIP, int.Parse("20002"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -243,16 +255,13 @@ namespace nhat
             int lenght = 0;
             try
             {
-                
+
                 sock.Send(sendbyte1);
                 lenght = sock.Receive(revbyte);
-                
+
                 Air_value.Text = ((char)revbyte[8]).ToString() + ((char)revbyte[9]).ToString() + ((char)revbyte[10]).ToString() + ((char)revbyte[11]).ToString();
                 PEF_value.Text = ((char)revbyte[23]).ToString() + ((char)revbyte[24]).ToString() + ((char)revbyte[25]).ToString() + ((char)revbyte[26]).ToString() + ((char)revbyte[27]).ToString();
 
-                //if (revbyte[38] == 45){
-                //    Oiltemp_value.Text =  ((char)revbyte[39]).ToString() + ((char)revbyte[40]).ToString() + ((char)revbyte[41]).ToString() + ((char)revbyte[42]).ToString();
-                //}
 
             }
             catch (Exception)
@@ -262,13 +271,38 @@ namespace nhat
             sock.Close();
         }
 
+        public void getHC()
+        {
+            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20002"));
+            sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            sock.Connect(serverFullAddress);
+            byte[] sendbyte1 = new byte[] { 80, 5, 48, 123 };
+            byte[] revbyte = new byte[1024];
+            int lenght = 0;
+            try
+            {
 
+                sock.Send(sendbyte1);
+                lenght = sock.Receive(revbyte);
+
+                HC_value.Text = ((char)revbyte[2]).ToString() + ((char)revbyte[3]).ToString() + ((char)revbyte[4]).ToString() + ((char)revbyte[5]).ToString() + ((char)revbyte[6]).ToString();
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("出错");
+            }
+            sock.Close();
+        }
+
+        //访问 NO2 并解析（端口 20008，RS485 + EVEN
         private void getNO2()
         {
             serverFullAddress = new IPEndPoint(serverIP, int.Parse("20008"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             sock.Connect(serverFullAddress);
-            byte []sendNO2 = new byte[] { 1, 32, 0, 57, 192 };
+            byte[] sendNO2 = new byte[] { 1, 32, 0, 57, 192 };
             byte[] revNO2 = new byte[10];
             int lenght = 0;
             try
@@ -281,16 +315,16 @@ namespace nhat
                 }
                 else
                 {
-                    NO2_value.Text = ((double)((revNO2[4] * 16 * 16 + revNO2[3])/10)).ToString();
+                    NO2_value.Text = ((double)((revNO2[4] * 16 * 16 + revNO2[3]) / 10)).ToString();
                 }
             }
-            catch (Exception) 
+            catch (Exception)
             {
                 MessageBox.Show("出错");
             }
         }
 
-
+        //访问 NO 并解析（端口 20007 ，RS485 + EVEN
         private void getNO()
         {
             serverFullAddress = new IPEndPoint(serverIP, int.Parse("20007"));
@@ -310,6 +344,7 @@ namespace nhat
                 else
                 {
                     NO_value.Text = ((double)((revNO[4] * 16 * 16 + revNO[3]) / 10)).ToString();
+                    //No
                 }
             }
             catch (Exception)
