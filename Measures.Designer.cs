@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Measures));
             this.index = new System.Windows.Forms.Button();
             this.measure = new System.Windows.Forms.Button();
             this.zero = new System.Windows.Forms.Button();
@@ -188,9 +189,9 @@
             this.Controls.Add(this.zero);
             this.Controls.Add(this.measure);
             this.Controls.Add(this.index);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Measures";
-            this.Text = "Measures";
-            this.Load += new System.EventHandler(this.Measures_Load);
+            this.Text = "测量菜单";
             this.ResumeLayout(false);
             this.PerformLayout();
 

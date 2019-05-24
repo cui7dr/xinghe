@@ -18,11 +18,6 @@ namespace nhat
             InitializeComponent();
         }
 
-        private void Measures_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
         #region
         /// <summary>
