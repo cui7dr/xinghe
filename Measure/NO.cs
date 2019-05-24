@@ -13,6 +13,27 @@ namespace nhat
     public partial class NO : Form
     {
 
+        public NO()
+        {
+            InitializeComponent();
+        }
+
+
+        // 四号气校准按钮
+        private void Four_Click(object sender, EventArgs e)
+        {
+            NOStandard noStandard = new NOStandard();
+            noStandard.Owner = this;
+            this.Hide();
+            noStandard.ShowDialog();
+        }
+
+
+        #region
+        /// <summary>
+        /// 窗体控件自适应
+        /// </summary>
+
         private Size m_szInit;//初始窗体大小
         private Dictionary<Control, Rectangle> m_dicSize = new Dictionary<Control, Rectangle>();
 
@@ -46,13 +67,15 @@ namespace nhat
             }
             base.OnResize(e);
         }
+        #endregion
 
 
-        public NO()
-        {
-            InitializeComponent();
-        }
+        #region
+        /// <summary>
+        /// 按钮功能
+        /// </summary>
 
+        //主菜单按钮
         private void Index_Click(object sender, EventArgs e)
         {
             Menu menu = new Menu();
@@ -61,12 +84,49 @@ namespace nhat
             menu.ShowDialog();
         }
 
+        //测量按钮
+        private void Measure_Click(object sender, EventArgs e)
+        {
+            Measures measures = new Measures();
+            measures.Owner = this;
+            this.Hide();
+            measures.ShowDialog();
+        }
+
+        //调零按钮
+        private void Zero_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // 校准按钮
         private void Calibration_Click(object sender, EventArgs e)
         {
-            Calibra calibra = new Calibra();
-            calibra.Owner = this;
+            Calibra calibration = new Calibra();
+            calibration.Owner = this;
             this.Hide();
-            calibra.ShowDialog();
+            calibration.ShowDialog();
         }
+
+        //诊断菜单
+        private void Diagnosis_Click(object sender, EventArgs e)
+        {
+            Diag diag = new Diag();
+            diag.Owner = this;
+            this.Hide();
+            diag.ShowDialog();
+        }
+
+        //设置菜单
+        private void Setting_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Owner = this;
+            this.Hide();
+            settings.ShowDialog();
+        }
+        #endregion
+
+       
     }
 }

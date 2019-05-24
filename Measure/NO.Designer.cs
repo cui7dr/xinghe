@@ -126,10 +126,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(544, 20);
+            this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(541, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 33);
+            this.label1.Size = new System.Drawing.Size(198, 33);
             this.label1.TabIndex = 6;
             this.label1.Text = "NO 校准菜单";
             // 
@@ -142,6 +142,7 @@
             this.four.TabIndex = 7;
             this.four.Text = "NO 四号气校准";
             this.four.UseVisualStyleBackColor = true;
+            this.four.Click += new System.EventHandler(this.Four_Click);
             // 
             // one
             // 
