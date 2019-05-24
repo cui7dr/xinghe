@@ -13,11 +13,22 @@ namespace nhat
     public partial class Measures : Form
     {
 
+        public Measures()
+        {
+            InitializeComponent();
+        }
+
+        private void Measures_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
         #region
         /// <summary>
         /// 窗体控件自适应
         /// </summary>
-        
+
         private Size m_szInit;//初始窗体大小
         private Dictionary<Control, Rectangle> m_dicSize = new Dictionary<Control, Rectangle>();
 
@@ -53,22 +64,11 @@ namespace nhat
         }
         #endregion
 
-
-        public Measures()
-        {
-            InitializeComponent();
-        }
-
-        private void Measures_Load(object sender, EventArgs e)
-        {
-
-        }
-
         #region
         /// <summary>
         /// 按钮功能
         /// </summary>
-        
+
         //主菜单按钮
         private void Index_Click(object sender, EventArgs e)
         {
@@ -86,7 +86,6 @@ namespace nhat
             this.Hide();
             measures.ShowDialog();
         }
-
 
         //调零按钮
         private void Zero_Click(object sender, EventArgs e)
