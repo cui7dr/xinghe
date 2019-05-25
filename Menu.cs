@@ -205,12 +205,17 @@ namespace nhat
         {
             getCOandCO2andOiltemp();
             getAirAndPEF();
+            getHC();
+            //getNO();
+            //getNO2();
+            //getN();
+            getK();
         }
 
-
+        //获取 CO、CO2、油温 的值
         public void getCOandCO2andOiltemp()
         {
-            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20002"));
+            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20001"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             sock.Connect(serverFullAddress);
             byte[] sendbyte = new byte[] { 84, 1, 32, 139 }; //5401208B（命令 T
@@ -224,7 +229,7 @@ namespace nhat
                 CO2_value.Text = ((char)revbyte[8]).ToString() + ((char)revbyte[9]).ToString() + ((char)revbyte[10]).ToString() + ((char)revbyte[11]).ToString() + ((char)revbyte[12]).ToString();
                 if (revbyte[38] == 45) //45 == 2D == -
                 {
-                    Oiltemp_value.Text = ((char)revbyte[39]).ToString() + ((char)revbyte[40]).ToString() + ((char)revbyte[41]).ToString() + ((char)revbyte[42]).ToString();
+                    Oiltemp_value.Text = ((char)revbyte[39]).ToString() + ((char)revbyte[40]).ToString() + ((char)revbyte[41]).ToString() + ((char)revbyte[42]).ToString()+ "  ℃";
                 }
             }
             catch (Exception)
@@ -234,34 +239,68 @@ namespace nhat
             sock.Close();
         }
 
+        //获取 气压 和 PEF 的值
         public void getAirAndPEF()
         {
-            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20002"));
+            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20001"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             sock.Connect(serverFullAddress);
+            //byte[] sendbyte = new byte[] { 84, 1, 32, 139 }; //5401208B（命令 T
+            //byte[] revbyte = new byte[1024];
+            //int lenght = 0;
+            //try
+            //{
+            //    sock.Send(sendbyte);
+            //    lenght = sock.Receive(revbyte);
+            //    CO_value.Text = ((char)revbyte[3]).ToString() + ((char)revbyte[4]).ToString() + ((char)revbyte[5]).ToString() + ((char)revbyte[6]).ToString() + ((char)revbyte[7]).ToString();
+            //    CO2_value.Text = ((char)revbyte[8]).ToString() + ((char)revbyte[9]).ToString() + ((char)revbyte[10]).ToString() + ((char)revbyte[11]).ToString() + ((char)revbyte[12]).ToString();
+            //    if (revbyte[38] == 45) //45 == 2D == -
+            //    {
+            //        Oiltemp_value.Text = ((char)revbyte[39]).ToString() + ((char)revbyte[40]).ToString() + ((char)revbyte[41]).ToString() + ((char)revbyte[42]).ToString() + "  ℃";
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("出错");
+            //}
             byte[] sendbyte1 = new byte[] { 84, 1, 21, 150 }; //54011596
-            byte[] revbyte = new byte[1024];
-            int lenght = 0;
+            byte[] revbyte1 = new byte[1024];
+            int lenght1 = 0;
             try
             {
                 sock.Send(sendbyte1);
-                lenght = sock.Receive(revbyte);
+                lenght1 = sock.Receive(revbyte1);
 
-                Air_value.Text = ((char)revbyte[8]).ToString() + ((char)revbyte[9]).ToString() + ((char)revbyte[10]).ToString() + ((char)revbyte[11]).ToString(); //气压值（mPa
-                PEF_value.Text = ((char)revbyte[23]).ToString() + ((char)revbyte[24]).ToString() + ((char)revbyte[25]).ToString() + ((char)revbyte[26]).ToString() + ((char)revbyte[27]).ToString();
-
+                Air_value.Text = ((char)revbyte1[8]).ToString() + ((char)revbyte1[9]).ToString() + ((char)revbyte1[10]).ToString() + ((char)revbyte1[11]).ToString()+"  mPa"; //气压值（mPa
+                PEF_value.Text = ((char)revbyte1[23]).ToString() + ((char)revbyte1[24]).ToString() + ((char)revbyte1[25]).ToString() + ((char)revbyte1[26]).ToString() + ((char)revbyte1[27]).ToString();
 
             }
             catch (Exception)
             {
                 MessageBox.Show("出错");
             }
+            //byte[] sendbyte2 = new byte[] { 80, 5, 48, 123 }; //5005307B（命令 P
+            //byte[] revbyte2 = new byte[1024];
+            //int lenght2 = 0;
+            //try
+            //{
+            //    sock.Send(sendbyte2);
+            //    lenght2 = sock.Receive(revbyte2);
+
+            //    HC_value.Text = ((char)revbyte2[2]).ToString() + ((char)revbyte2[3]).ToString() + ((char)revbyte2[4]).ToString() + ((char)revbyte2[5]).ToString() + ((char)revbyte2[6]).ToString();
+
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("出错");
+            //}
             sock.Close();
         }
 
+        //向 PEF 获取 HC 的浓度值
         public void getHC()
         {
-            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20002"));
+            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20001"));
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             sock.Connect(serverFullAddress);
             byte[] sendbyte1 = new byte[] { 80, 5, 48, 123 }; //5005307B（命令 P
@@ -278,6 +317,54 @@ namespace nhat
             catch (Exception)
             {
                 MessageBox.Show("出错");
+            }
+            sock.Close();
+        }
+
+        //获取 不透光度 N 的值
+        private void getN()
+        {
+            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20004"));
+            sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            sock.Connect(serverFullAddress);
+            byte[] sendbyte1 = new byte[] { 122, 134 }; //7A86
+            byte[] revbyte = new byte[1024];
+            int lenght = 0;
+            try
+            {
+                sock.Send(sendbyte1);
+                lenght = sock.Receive(revbyte);
+
+                N_value.Text = revbyte[2].ToString()+"  %";
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("读取不透光度出错");
+            }
+            sock.Close();
+        }
+
+        //获取 光吸收系数 K 的值
+        private void getK()
+        {
+            serverFullAddress = new IPEndPoint(serverIP, int.Parse("20004"));
+            sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            sock.Connect(serverFullAddress);
+            byte[] sendbyte1 = new byte[] { 99, 157 }; //639D
+            byte[] revbyte = new byte[1024];
+            int lenght = 0;
+            try
+            {
+                sock.Send(sendbyte1);
+                lenght = sock.Receive(revbyte);
+
+                K_value.Text = revbyte[2].ToString() + "  /m";
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("读取光吸收系数出错");
             }
             sock.Close();
         }
