@@ -142,6 +142,7 @@
             this.four.TabIndex = 7;
             this.four.Text = "HOCOCO2 四号气校准";
             this.four.UseVisualStyleBackColor = true;
+            this.four.Click += new System.EventHandler(this.Four_Click);
             // 
             // one
             // 
@@ -191,6 +192,7 @@
             this.Controls.Add(this.index);
             this.Name = "HCCOCO2";
             this.Text = "HOCOCO2";
+            this.Load += new System.EventHandler(this.HCCOCO2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

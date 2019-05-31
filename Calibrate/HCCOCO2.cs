@@ -117,5 +117,19 @@ namespace nhat
         }
         #endregion
 
+        private void Four_Click(object sender, EventArgs e)
+        {
+            HCCOCO2Standard hcstandard = new HCCOCO2Standard();
+            hcstandard.Owner = this;
+            this.Hide();
+            hcstandard.ShowDialog();
+        }
+
+        private void HCCOCO2_Load(object sender, EventArgs e)
+        {
+            one.Enabled = false;
+            two.Enabled = false;
+            three.Enabled = false;
+        }
     }
 }
