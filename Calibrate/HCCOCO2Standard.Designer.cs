@@ -87,6 +87,7 @@
             this.measure.TabIndex = 1;
             this.measure.Text = "测量";
             this.measure.UseVisualStyleBackColor = true;
+            this.measure.Click += new System.EventHandler(this.Measure_Click);
             // 
             // zero
             // 
@@ -100,6 +101,7 @@
             this.zero.TabIndex = 2;
             this.zero.Text = "调零";
             this.zero.UseVisualStyleBackColor = true;
+            this.zero.Click += new System.EventHandler(this.Zero_Click);
             // 
             // calibration
             // 
@@ -127,6 +129,7 @@
             this.diagnosis.TabIndex = 4;
             this.diagnosis.Text = "诊断";
             this.diagnosis.UseVisualStyleBackColor = true;
+            this.diagnosis.Click += new System.EventHandler(this.Diagnosis_Click);
             // 
             // setting
             // 
@@ -140,6 +143,7 @@
             this.setting.TabIndex = 5;
             this.setting.Text = "设置";
             this.setting.UseVisualStyleBackColor = true;
+            this.setting.Click += new System.EventHandler(this.Setting_Click);
             // 
             // HC
             // 
