@@ -427,6 +427,7 @@
             this.Controls.Add(this.index);
             this.Name = "HCCOCO2Standard";
             this.Text = "HCCOCO2Standard";
+            this.Load += new System.EventHandler(this.HCCOCO2Standard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

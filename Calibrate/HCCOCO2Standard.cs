@@ -116,5 +116,9 @@ namespace nhat
         }
         #endregion
 
+        private void HCCOCO2Standard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
