@@ -90,16 +90,16 @@
     <Compile Include="Setting\Exhaust.Designer.cs">
       <DependentUpon>Exhaust.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calibrate1\HCCOCO2Standard.cs">
+    <Compile Include="Calibrate\HCCOCO2Standard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calibrate1\HCCOCO2Standard.Designer.cs">
+    <Compile Include="Calibrate\HCCOCO2Standard.Designer.cs">
       <DependentUpon>HCCOCO2Standard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calibrate1\HCCOCO2.cs">
+    <Compile Include="Calibrate\HCCOCO2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calibrate1\HCCOCO2.Designer.cs">
+    <Compile Include="Calibrate\HCCOCO2.Designer.cs">
       <DependentUpon>HCCOCO2.cs</DependentUpon>
     </Compile>
     <Compile Include="master.cs">
@@ -126,28 +126,28 @@
     <Compile Include="Measure\newCar.Designer.cs">
       <DependentUpon>newCar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calibrate1\NO.cs">
+    <Compile Include="Calibrate\NO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calibrate1\NO.Designer.cs">
+    <Compile Include="Calibrate\NO.Designer.cs">
       <DependentUpon>NO.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calibrate1\NO2.cs">
+    <Compile Include="Calibrate\NO2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calibrate1\NO2.Designer.cs">
+    <Compile Include="Calibrate\NO2.Designer.cs">
       <DependentUpon>NO2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calibrate1\NO2Standard.cs">
+    <Compile Include="Calibrate\NO2Standard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calibrate1\NO2Standard.Designer.cs">
+    <Compile Include="Calibrate\NO2Standard.Designer.cs">
       <DependentUpon>NO2Standard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calibrate1\NOStandard.cs">
+    <Compile Include="Calibrate\NOStandard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calibrate1\NOStandard.Designer.cs">
+    <Compile Include="Calibrate\NOStandard.Designer.cs">
       <DependentUpon>NOStandard.cs</DependentUpon>
     </Compile>
     <Compile Include="Measure\Opaque.cs">
@@ -156,10 +156,10 @@
     <Compile Include="Measure\Opaque.Designer.cs">
       <DependentUpon>Opaque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calibrate1\OpaqueCali.cs">
+    <Compile Include="Calibrate\OpaqueCali.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calibrate1\OpaqueCali.Designer.cs">
+    <Compile Include="Calibrate\OpaqueCali.Designer.cs">
       <DependentUpon>OpaqueCali.cs</DependentUpon>
     </Compile>
     <Compile Include="Setting\OpaqueSet.cs">
@@ -221,10 +221,10 @@
     <EmbeddedResource Include="Setting\Exhaust.resx">
       <DependentUpon>Exhaust.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calibrate1\HCCOCO2.resx">
+    <EmbeddedResource Include="Calibrate\HCCOCO2.resx">
       <DependentUpon>HCCOCO2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calibrate1\HCCOCO2Standard.resx">
+    <EmbeddedResource Include="Calibrate\HCCOCO2Standard.resx">
       <DependentUpon>HCCOCO2Standard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="master.resx">
@@ -236,22 +236,22 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calibrate1\NO.resx">
+    <EmbeddedResource Include="Calibrate\NO.resx">
       <DependentUpon>NO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calibrate1\NO2.resx">
+    <EmbeddedResource Include="Calibrate\NO2.resx">
       <DependentUpon>NO2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calibrate1\NO2Standard.resx">
+    <EmbeddedResource Include="Calibrate\NO2Standard.resx">
       <DependentUpon>NO2Standard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calibrate1\NOStandard.resx">
+    <EmbeddedResource Include="Calibrate\NOStandard.resx">
       <DependentUpon>NOStandard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Measure\Opaque.resx">
       <DependentUpon>Opaque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calibrate1\OpaqueCali.resx">
+    <EmbeddedResource Include="Calibrate\OpaqueCali.resx">
       <DependentUpon>OpaqueCali.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setting\OpaqueSet.resx">
