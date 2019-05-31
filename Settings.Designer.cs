@@ -142,6 +142,7 @@
             this.exhaust.TabIndex = 7;
             this.exhaust.Text = "废气参数设置";
             this.exhaust.UseVisualStyleBackColor = true;
+            this.exhaust.Click += new System.EventHandler(this.Exhaust_Click);
             // 
             // opaque
             // 
@@ -152,6 +153,7 @@
             this.opaque.TabIndex = 8;
             this.opaque.Text = "不透光参数设置";
             this.opaque.UseVisualStyleBackColor = true;
+            this.opaque.Click += new System.EventHandler(this.Opaque_Click);
             // 
             // Settings
             // 

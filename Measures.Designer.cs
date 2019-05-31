@@ -68,6 +68,7 @@
             this.measure.TabIndex = 1;
             this.measure.Text = "测量";
             this.measure.UseVisualStyleBackColor = true;
+            this.measure.Click += new System.EventHandler(this.Measure_Click);
             // 
             // zero
             // 
@@ -81,6 +82,7 @@
             this.zero.TabIndex = 2;
             this.zero.Text = "调零";
             this.zero.UseVisualStyleBackColor = true;
+            this.zero.Click += new System.EventHandler(this.Zero_Click);
             // 
             // calibration
             // 
@@ -94,6 +96,7 @@
             this.calibration.TabIndex = 3;
             this.calibration.Text = "校准";
             this.calibration.UseVisualStyleBackColor = true;
+            this.calibration.Click += new System.EventHandler(this.Calibration_Click);
             // 
             // diagnosis
             // 
@@ -107,6 +110,7 @@
             this.diagnosis.TabIndex = 4;
             this.diagnosis.Text = "诊断";
             this.diagnosis.UseVisualStyleBackColor = true;
+            this.diagnosis.Click += new System.EventHandler(this.Diagnosis_Click);
             // 
             // setting
             // 
@@ -120,6 +124,7 @@
             this.setting.TabIndex = 5;
             this.setting.Text = "设置";
             this.setting.UseVisualStyleBackColor = true;
+            this.setting.Click += new System.EventHandler(this.Setting_Click);
             // 
             // label1
             // 
@@ -142,6 +147,7 @@
             this.exhaust.TabIndex = 7;
             this.exhaust.Text = "废气测量";
             this.exhaust.UseVisualStyleBackColor = true;
+            this.exhaust.Click += new System.EventHandler(this.Exhaust_Click);
             // 
             // opaque
             // 
@@ -152,6 +158,7 @@
             this.opaque.TabIndex = 8;
             this.opaque.Text = "不透光实时测量";
             this.opaque.UseVisualStyleBackColor = true;
+            this.opaque.Click += new System.EventHandler(this.Opaque_Click);
             // 
             // useCar
             // 
@@ -162,6 +169,7 @@
             this.useCar.TabIndex = 9;
             this.useCar.Text = "在用车自由加速试验";
             this.useCar.UseVisualStyleBackColor = true;
+            this.useCar.Click += new System.EventHandler(this.UseCar_Click);
             // 
             // newCar
             // 
@@ -172,6 +180,7 @@
             this.newCar.TabIndex = 10;
             this.newCar.Text = "新生产车自由加速试验";
             this.newCar.UseVisualStyleBackColor = true;
+            this.newCar.Click += new System.EventHandler(this.NewCar_Click);
             // 
             // Measures
             // 

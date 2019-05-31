@@ -144,5 +144,20 @@ namespace nhat
         }
         #endregion
 
+        private void Opaque_Click(object sender, EventArgs e)
+        {
+            OpaqueCali cali = new OpaqueCali();
+            cali.Owner = this;
+            this.Hide();
+            cali.ShowDialog();
+        }
+
+        private void NO2_Click(object sender, EventArgs e)
+        {
+            NO2 no2 = new NO2();
+            no2.Owner = this;
+            this.Hide();
+            no2.ShowDialog();
+        }
     }
 }

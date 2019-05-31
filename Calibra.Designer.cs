@@ -194,6 +194,7 @@
             this.NO2.TabIndex = 10;
             this.NO2.Text = "NO2 校准";
             this.NO2.UseVisualStyleBackColor = true;
+            this.NO2.Click += new System.EventHandler(this.NO2_Click);
             // 
             // assist
             // 
@@ -224,6 +225,7 @@
             this.opaque.TabIndex = 13;
             this.opaque.Text = "不透光校准";
             this.opaque.UseVisualStyleBackColor = true;
+            this.opaque.Click += new System.EventHandler(this.Opaque_Click);
             // 
             // restore
             // 

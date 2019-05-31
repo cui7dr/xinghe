@@ -39,7 +39,6 @@
             this.NO = new System.Windows.Forms.Label();
             this.NO2 = new System.Windows.Forms.Label();
             this.N = new System.Windows.Forms.Label();
-            this.NOx = new System.Windows.Forms.Label();
             this.CO2 = new System.Windows.Forms.Label();
             this.K = new System.Windows.Forms.Label();
             this.Oiltemp = new System.Windows.Forms.Label();
@@ -50,8 +49,6 @@
             this.lambda = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.NO_value = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.NO2_value = new System.Windows.Forms.Label();
             this.CO2_value = new System.Windows.Forms.Label();
             this.Oiltemp_value = new System.Windows.Forms.Label();
@@ -74,6 +71,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.N_value = new System.Windows.Forms.Label();
             this.K_value = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // index
@@ -190,16 +188,6 @@
             this.N.TabIndex = 8;
             this.N.Text = "N";
             // 
-            // NOx
-            // 
-            this.NOx.AutoSize = true;
-            this.NOx.Font = new System.Drawing.Font("微软雅黑", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.NOx.Location = new System.Drawing.Point(643, 9);
-            this.NOx.Name = "NOx";
-            this.NOx.Size = new System.Drawing.Size(257, 124);
-            this.NOx.TabIndex = 9;
-            this.NOx.Text = "NOx";
-            // 
             // CO2
             // 
             this.CO2.AutoSize = true;
@@ -284,37 +272,17 @@
             // 
             this.NO_value.AutoSize = true;
             this.NO_value.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.NO_value.Location = new System.Drawing.Point(206, 47);
+            this.NO_value.Location = new System.Drawing.Point(226, 43);
             this.NO_value.Name = "NO_value";
             this.NO_value.Size = new System.Drawing.Size(188, 64);
             this.NO_value.TabIndex = 18;
             this.NO_value.Text = "00000";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1192, 486);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1192, 515);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "test2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
             // NO2_value
             // 
             this.NO2_value.AutoSize = true;
             this.NO2_value.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.NO2_value.Location = new System.Drawing.Point(290, 188);
+            this.NO2_value.Location = new System.Drawing.Point(282, 170);
             this.NO2_value.Name = "NO2_value";
             this.NO2_value.Size = new System.Drawing.Size(188, 64);
             this.NO2_value.TabIndex = 22;
@@ -324,7 +292,7 @@
             // 
             this.CO2_value.AutoSize = true;
             this.CO2_value.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CO2_value.Location = new System.Drawing.Point(899, 188);
+            this.CO2_value.Location = new System.Drawing.Point(899, 170);
             this.CO2_value.Name = "CO2_value";
             this.CO2_value.Size = new System.Drawing.Size(188, 64);
             this.CO2_value.TabIndex = 23;
@@ -373,7 +341,7 @@
             // 
             this.CO.AutoSize = true;
             this.CO.Font = new System.Drawing.Font("微软雅黑", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CO.Location = new System.Drawing.Point(12, 414);
+            this.CO.Location = new System.Drawing.Point(643, 9);
             this.CO.Name = "CO";
             this.CO.Size = new System.Drawing.Size(194, 124);
             this.CO.TabIndex = 28;
@@ -383,7 +351,7 @@
             // 
             this.HC.AutoSize = true;
             this.HC.Font = new System.Drawing.Font("微软雅黑", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.HC.Location = new System.Drawing.Point(643, 414);
+            this.HC.Location = new System.Drawing.Point(12, 398);
             this.HC.Name = "HC";
             this.HC.Size = new System.Drawing.Size(190, 124);
             this.HC.TabIndex = 29;
@@ -393,7 +361,7 @@
             // 
             this.CO_value.AutoSize = true;
             this.CO_value.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CO_value.Location = new System.Drawing.Point(212, 458);
+            this.CO_value.Location = new System.Drawing.Point(843, 43);
             this.CO_value.Name = "CO_value";
             this.CO_value.Size = new System.Drawing.Size(188, 64);
             this.CO_value.TabIndex = 30;
@@ -403,7 +371,7 @@
             // 
             this.HC_value.AutoSize = true;
             this.HC_value.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.HC_value.Location = new System.Drawing.Point(848, 458);
+            this.HC_value.Location = new System.Drawing.Point(208, 433);
             this.HC_value.Name = "HC_value";
             this.HC_value.Size = new System.Drawing.Size(188, 64);
             this.HC_value.TabIndex = 31;
@@ -413,7 +381,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(456, 481);
+            this.label3.Location = new System.Drawing.Point(1087, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 16);
             this.label3.TabIndex = 33;
@@ -423,7 +391,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(406, 481);
+            this.label2.Location = new System.Drawing.Point(1037, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 37);
             this.label2.TabIndex = 32;
@@ -433,7 +401,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(1092, 481);
+            this.label4.Location = new System.Drawing.Point(470, 447);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 16);
             this.label4.TabIndex = 35;
@@ -443,7 +411,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(1042, 481);
+            this.label5.Location = new System.Drawing.Point(420, 447);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 37);
             this.label5.TabIndex = 34;
@@ -453,7 +421,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(1143, 211);
+            this.label6.Location = new System.Drawing.Point(1143, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(24, 16);
             this.label6.TabIndex = 37;
@@ -463,7 +431,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("宋体", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(1093, 211);
+            this.label7.Location = new System.Drawing.Point(1093, 188);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 37);
             this.label7.TabIndex = 36;
@@ -473,7 +441,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(534, 211);
+            this.label8.Location = new System.Drawing.Point(526, 188);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(24, 16);
             this.label8.TabIndex = 39;
@@ -483,7 +451,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("宋体", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(484, 211);
+            this.label9.Location = new System.Drawing.Point(476, 188);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 37);
             this.label9.TabIndex = 38;
@@ -493,7 +461,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(450, 70);
+            this.label10.Location = new System.Drawing.Point(470, 55);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(24, 16);
             this.label10.TabIndex = 41;
@@ -503,7 +471,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("宋体", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(400, 70);
+            this.label11.Location = new System.Drawing.Point(420, 55);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 37);
             this.label11.TabIndex = 40;
@@ -513,7 +481,7 @@
             // 
             this.N_value.AutoSize = true;
             this.N_value.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.N_value.Location = new System.Drawing.Point(148, 323);
+            this.N_value.Location = new System.Drawing.Point(148, 311);
             this.N_value.Name = "N_value";
             this.N_value.Size = new System.Drawing.Size(188, 64);
             this.N_value.TabIndex = 42;
@@ -528,6 +496,12 @@
             this.K_value.Size = new System.Drawing.Size(188, 64);
             this.K_value.TabIndex = 43;
             this.K_value.Text = "00000";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // Menu
             // 
@@ -556,8 +530,6 @@
             this.Controls.Add(this.Oiltemp_value);
             this.Controls.Add(this.CO2_value);
             this.Controls.Add(this.NO2_value);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.NO_value);
             this.Controls.Add(this.lambda);
             this.Controls.Add(this.humidity);
@@ -567,7 +539,6 @@
             this.Controls.Add(this.Oiltemp);
             this.Controls.Add(this.K);
             this.Controls.Add(this.CO2);
-            this.Controls.Add(this.NOx);
             this.Controls.Add(this.N);
             this.Controls.Add(this.NO2);
             this.Controls.Add(this.NO);
@@ -597,7 +568,6 @@
         private System.Windows.Forms.Label NO;
         private System.Windows.Forms.Label NO2;
         private System.Windows.Forms.Label N; //不透光度
-        private System.Windows.Forms.Label NOx;
         private System.Windows.Forms.Label CO2;
         private System.Windows.Forms.Label K; //光吸收系数
         private System.Windows.Forms.Label Oiltemp; //油温
@@ -608,8 +578,6 @@
         private System.Windows.Forms.Label lambda; //λ
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Label NO_value;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label NO2_value;
         private System.Windows.Forms.Label CO2_value;
         private System.Windows.Forms.Label Oiltemp_value;
@@ -632,6 +600,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label N_value;
         private System.Windows.Forms.Label K_value;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

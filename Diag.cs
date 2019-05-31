@@ -117,5 +117,52 @@ namespace nhat
         }
         #endregion
 
+        private void Air_Click(object sender, EventArgs e)
+        {
+            Air air = new Air();
+            air.Owner = this;
+            air.Hide();
+            air.ShowDialog();
+        }
+
+        private void Pump_Click(object sender, EventArgs e)
+        {
+            Pump pump = new Pump();
+            pump.Owner = this;
+            pump.Hide();
+            pump.ShowDialog();
+        }
+
+        private void Temperature_Click(object sender, EventArgs e)
+        {
+            Temp temp = new Temp();
+            temp.Owner = this;
+            this.Hide();
+            temp.ShowDialog();
+        }
+
+        private void OpticsID_Click(object sender, EventArgs e)
+        {
+            OpticsID optics = new OpticsID();
+            optics.Owner = this;
+            this.Hide();
+            optics.ShowDialog();
+        }
+
+        private void Version_Click(object sender, EventArgs e)
+        {
+            OpaqueVer ver = new OpaqueVer();
+            ver.Owner = this;
+            this.Hide();
+            ver.ShowDialog();
+        }
+
+        private void Warn_Click(object sender, EventArgs e)
+        {
+            OpaqueWarn warn = new OpaqueWarn();
+            warn.Owner = this;
+            this.Hide();
+            warn.ShowDialog();
+        }
     }
 }

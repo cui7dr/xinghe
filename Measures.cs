@@ -116,5 +116,33 @@ namespace nhat
         }
         #endregion
 
+        private void Exhaust_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Opaque_Click(object sender, EventArgs e)
+        {
+            Opaque opaque = new Opaque();
+            opaque.Owner = this;
+            this.Hide();
+            opaque.ShowDialog();
+        }
+
+        private void UseCar_Click(object sender, EventArgs e)
+        {
+            useCar uCar = new useCar();
+            uCar.Owner = this;
+            this.Hide();
+            uCar.ShowDialog();
+        }
+
+        private void NewCar_Click(object sender, EventArgs e)
+        {
+            newCar nCar = new newCar();
+            nCar.Owner = this;
+            this.Hide();
+            nCar.ShowDialog();
+        }
     }
 }

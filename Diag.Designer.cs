@@ -70,6 +70,7 @@
             this.index.TabIndex = 0;
             this.index.Text = "主界面";
             this.index.UseVisualStyleBackColor = true;
+            this.index.Click += new System.EventHandler(this.Index_Click);
             // 
             // measure
             // 
@@ -83,6 +84,7 @@
             this.measure.TabIndex = 1;
             this.measure.Text = "测量";
             this.measure.UseVisualStyleBackColor = true;
+            this.measure.Click += new System.EventHandler(this.Measure_Click);
             // 
             // zero
             // 
@@ -96,6 +98,7 @@
             this.zero.TabIndex = 2;
             this.zero.Text = "调零";
             this.zero.UseVisualStyleBackColor = true;
+            this.zero.Click += new System.EventHandler(this.Zero_Click);
             // 
             // calibration
             // 
@@ -109,6 +112,7 @@
             this.calibration.TabIndex = 3;
             this.calibration.Text = "校准";
             this.calibration.UseVisualStyleBackColor = true;
+            this.calibration.Click += new System.EventHandler(this.Calibration_Click);
             // 
             // diagnosis
             // 
@@ -122,6 +126,7 @@
             this.diagnosis.TabIndex = 4;
             this.diagnosis.Text = "诊断";
             this.diagnosis.UseVisualStyleBackColor = true;
+            this.diagnosis.Click += new System.EventHandler(this.Diagnosis_Click);
             // 
             // setting
             // 
@@ -135,6 +140,7 @@
             this.setting.TabIndex = 5;
             this.setting.Text = "设置";
             this.setting.UseVisualStyleBackColor = true;
+            this.setting.Click += new System.EventHandler(this.Setting_Click);
             // 
             // leak
             // 
@@ -155,6 +161,7 @@
             this.temperature.TabIndex = 7;
             this.temperature.Text = "露点温度检查";
             this.temperature.UseVisualStyleBackColor = true;
+            this.temperature.Click += new System.EventHandler(this.Temperature_Click);
             // 
             // air
             // 
@@ -165,6 +172,7 @@
             this.air.TabIndex = 8;
             this.air.Text = "环境空气检查";
             this.air.UseVisualStyleBackColor = true;
+            this.air.Click += new System.EventHandler(this.Air_Click);
             // 
             // InternalParameter
             // 
@@ -185,6 +193,7 @@
             this.pump.TabIndex = 10;
             this.pump.Text = "泵阀动作检查";
             this.pump.UseVisualStyleBackColor = true;
+            this.pump.Click += new System.EventHandler(this.Pump_Click);
             // 
             // opticsID
             // 
@@ -195,6 +204,7 @@
             this.opticsID.TabIndex = 11;
             this.opticsID.Text = "光学平台 ID";
             this.opticsID.UseVisualStyleBackColor = true;
+            this.opticsID.Click += new System.EventHandler(this.OpticsID_Click);
             // 
             // warn
             // 
@@ -205,6 +215,7 @@
             this.warn.TabIndex = 12;
             this.warn.Text = "不透光报警信息";
             this.warn.UseVisualStyleBackColor = true;
+            this.warn.Click += new System.EventHandler(this.Warn_Click);
             // 
             // version
             // 
@@ -215,6 +226,7 @@
             this.version.TabIndex = 13;
             this.version.Text = "不透光版本";
             this.version.UseVisualStyleBackColor = true;
+            this.version.Click += new System.EventHandler(this.Version_Click);
             // 
             // Diag
             // 

@@ -115,5 +115,20 @@ namespace nhat
         }
         #endregion
 
+        private void Exhaust_Click(object sender, EventArgs e)
+        {
+            Exhaust exhaust = new Exhaust();
+            exhaust.Owner = this;
+            this.Hide();
+            exhaust.ShowDialog();
+        }
+
+        private void Opaque_Click(object sender, EventArgs e)
+        {
+            OpaqueSet oset = new OpaqueSet();
+            oset.Owner = this;
+            this.Hide();
+            oset.ShowDialog();
+        }
     }
 }
